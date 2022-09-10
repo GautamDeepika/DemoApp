@@ -73,7 +73,7 @@
             android:text="@{viewModel.password}"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:theme="@style/MyHintStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
