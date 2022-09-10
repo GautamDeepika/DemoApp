@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/navigation_welcome_login">
+
+    <fragment
+        android:id="@+id/navigation_welcome_login"
+        android:name="com.example.demoapp.view.loginregister.WelcomeLoginFragment"
+        tools:layout="@layout/fragment_welcome_login"/>
+
+    <fragment
+        android:id="@+id/navigation_register_user"
+        android:name="com.example.demoapp.view.loginregister.RegisterUserFragment"
+        tools:layout="@layout/fragment_register_user"/>
+
+</navigation>

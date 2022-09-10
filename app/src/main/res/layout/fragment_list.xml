@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.userprofile.list.ListFragment">
+
+    <data>
+
+        <variable
+            name="mSharedViewModel"
+            type="com.example.demoapp.viewmodel.userprofile.SharedViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/listLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layoutBg"
+            layout="@layout/layout_background" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:fadeScrollbars="true"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="16dp"
+            android:layoutAnimation="@anim/recyclerview_anim"
+            android:orientation="vertical"
+            android:requiresFadingEdge="vertical"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:spanCount="2"
+            tools:listitem="@layout/row_layout" />
+
+        <ImageView
+            android:id="@+id/ivNoData"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:alpha="0.7"
+            android:emptyDatabase="@{mSharedViewModel.emptyDatabase}"
+            android:src="@drawable/ic_nodata"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+
+        <TextView
+            android:id="@+id/tvNodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:alpha="0.7"
+            android:emptyDatabase="@{mSharedViewModel.emptyDatabase}"
+            android:text="@string/no_data"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivNoData" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:navigateToAddFragment="@{true}"
+            android:src="@drawable/ic_add"
+            android:tint="@color/white"
+            app:backgroundTint="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionVideoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:navigateToVideoFragment="@{true}"
+            android:src="@drawable/ic_video"
+            android:tint="@color/white"
+            app:backgroundTint="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
